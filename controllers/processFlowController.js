@@ -21,7 +21,7 @@ const mockProcessFlowResponse = {
   characteristic: [],
   relatedEntity: [
       {
-          id: "Product_ID",
+          id: Product_ID,
           name: null,
           role: null,
           "@baseType": null,
@@ -32,8 +32,8 @@ const mockProcessFlowResponse = {
   ],
   relatedParty: [
       {
-          id: "ORANGE_ID",
-          name: "username",
+          id: ORANGE_ID,
+          name: username,
           role: "customer",
           "@baseType": null,
           "@schemaLocation": null,
