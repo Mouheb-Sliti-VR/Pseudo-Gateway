@@ -118,12 +118,12 @@ const mockProcessFlowResponse = {
 };
 
 // Controller function to handle the POST request for process flow
-const processFlow = (req, res, payload) => {
+const processFlow = (req, res) => {
   // Extract necessary data from the request body
-  const { ID_ORANGE, username, productId } = payload;
+  const { ID_ORANGE, username, productId } = req.body;
 
   // Modify the mock response data with the received data
-  const response = {
+ /* const response = {
       ...mockProcessFlowResponse,
       relatedEntity: [
           {
@@ -139,7 +139,7 @@ const processFlow = (req, res, payload) => {
           }
       ]
   };
-
+*/
   // Send the modified mock response data
   res.status(200).json(response);
 };
