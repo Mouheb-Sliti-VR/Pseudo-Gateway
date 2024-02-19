@@ -119,8 +119,10 @@ const mockProcessFlowResponse = {
 
 // Controller function to handle the POST request for process flow
 const processFlow = (req, res) => {
+    res.status(200).json(mockProcessFlowResponse);
+
+};
   // Extract necessary data from the request body
-  const { ID_ORANGE, username, productId } = req.body;
 
   // Modify the mock response data with the received data
  /* const response = {
@@ -141,8 +143,7 @@ const processFlow = (req, res) => {
   };
 */
   // Send the modified mock response data
-  res.status(200).json(response);
-};
+
 
 module.exports = {
   processFlow,
