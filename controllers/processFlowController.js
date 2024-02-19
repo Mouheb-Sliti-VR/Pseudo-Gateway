@@ -2,47 +2,50 @@
 
 // Mock response data for process flow
 const mockProcessFlowResponse = {
-  id: "2358554f-c484-4922-b390-a5ced1168dcb",
-  href: "https://om-order-capture-staging.apps.fr01.paas.tech.orange/processManagement/v1/processFlow/2358554f-c484-4922-b390-a5ced1168dcb",
-  correlationId: null,
-  processFlowDate: new Date().toISOString(),
-  processFlowSpecification: "OrderCapture",
-  description: null,
-  channel: [
+  "id": "2358554f-c484-4922-b390-a5ced1168dcb",
+  "href": "https://om-order-capture-staging.apps.fr01.paas.tech.orange/processManagement/v1/processFlow/2358554f-c484-4922-b390-a5ced1168dcb",
+  "correlationId": null,
+  "processFlowDate": "2024-02-19T13:34:36.037141869Z",
+  "processFlowSpecification": "OrderCapture",
+  "description": null,
+  "channel": [
       {
-          id: "004",
-          name: "METAVERSE",
+          "id": "001",
+          "href": null,
+          "name": "WEB",
           "@baseType": null,
           "@schemaLocation": null,
           "@type": null,
           "@referredType": null
       }
   ],
-  characteristic: [],
-  relatedEntity: [
+  "characteristic": [],
+  "relatedEntity": [
       {
-          id: Product_ID,
-          name: null,
-          role: null,
+          "id": "5fe032f0-fa01-42ec-afeb-920f74c2eae3",
+          "href": null,
+          "name": null,
+          "role": null,
           "@baseType": null,
           "@schemaLocation": null,
           "@type": null,
           "@referredType": "productOffering"
       }
   ],
-  relatedParty: [
+  "relatedParty": [
       {
-          id: ORANGE_ID,
-          name: username,
-          role: "customer",
+          "id": "123orange123",
+          "href": null,
+          "name": "Mouheb_Sliti",
+          "role": "customer",
           "@baseType": null,
           "@schemaLocation": null,
           "@type": null,
           "@referredType": "individual"
       }
   ],
-  state: "active",
-  taskFlow: null,
+  "state": "active",
+  "taskFlow": null,
   "@baseType": null,
   "@schemaLocation": null,
   "@type": "ProcessFlow",
