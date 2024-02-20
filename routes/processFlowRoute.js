@@ -5,6 +5,8 @@ const processFlowController = require('../controllers/processFlowController');
 
 // Route to handle POST request for process flow
 router.post('/mock/processFlow', processFlowController.processFlow);
-router.post('/mock/confirmConf', processFlowController.confirmConfiguration)
+router.post('/mock/confirmConf', processFlowController.confirmConfiguration);
+router.post('/mock/validateOrder', processFlowController.confirmConfiguration);
+
 
 module.exports = router;
