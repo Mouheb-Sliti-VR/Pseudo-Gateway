@@ -598,8 +598,8 @@ const mockedValidateResponse = {
     ],
     "relatedParty": [
         {
-            "id": "227-mf30",
-            "name": "Lisa",
+            "id": "123orange123",
+            "name": "Mouheb_Sliti",
             "role": "customer",
             "@referredType": "individual"
         }
