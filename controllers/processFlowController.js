@@ -126,9 +126,9 @@ const mockedConfResponse =  {
     "description": null,
     "channel": [
         {
-            "id": "001",
+            "id": "004",
             "href": null,
-            "name": "WEB",
+            "name": "METAVERSE",
             "@baseType": null,
             "@schemaLocation": null,
             "@type": null,
@@ -624,5 +624,5 @@ const validateOrder = (req, res) => {
 
 
 module.exports = {
-  processFlow,confirmConfiguration,mockedValidateResponse,
+  processFlow,confirmConfiguration,validateOrder,
 };
