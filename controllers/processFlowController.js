@@ -608,6 +608,89 @@ const mockedValidateResponse = {
     "@type": "ProductOrder"
 };
 
+const mockedPaymentResponse = {
+    "id": "4cd5482f-cc8c-4d70-bfd6-f0423a0b4038",
+    "href": "https://om-order-capture-staging.apps.fr01.paas.tech.orange/processManagement/v1/processFlow/31353616-bd37-46f3-9035-aac85a90f398/taskFlow/4cd5482f-cc8c-4d70-bfd6-f0423a0b4038",
+    "correlationId": null,
+    "completionMethod": null,
+    "isMandatory": null,
+    "priority": 50,
+    "taskFlowSpecification": "payOrder",
+    "description": null,
+    "channel": [
+        {
+            "id": "002",
+            "href": null,
+            "name": "SHOP",
+            "@baseType": null,
+            "@schemaLocation": null,
+            "@type": null,
+            "@referredType": null
+        }
+    ],
+    "characteristic": [
+        {
+            "name": "ProvidePaymentRef",
+            "id": "c0da9654-a906-4327-8b15-72dd9c32dadd",
+            "valueType": "Object",
+            "@baseType": null,
+            "@schemaLocation": null,
+            "@type": "ObjectCharacteristic",
+            "characteristicRelationship": null,
+            "value": {
+                "paymentRefId": [
+                    {
+                        "id": "paid_100"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "OrderItemToBePaid",
+            "id": null,
+            "valueType": "Object",
+            "@baseType": null,
+            "@schemaLocation": null,
+            "@type": "ObjectCharacteristic",
+            "characteristicRelationship": [
+                {
+                    "id": "c0da9654-a906-4327-8b15-72dd9c32dadd",
+                    "relationshipType": "relatedTo"
+                }
+            ],
+            "value": "54670855-2491-4c06-8884-4278bd0e85d9"
+        }
+    ],
+    "relatedEntity": [],
+    "relatedParty": [
+        {
+            "id": "226-mf30",
+            "href": null,
+            "name": "Lisa",
+            "role": "customer",
+            "@baseType": null,
+            "@schemaLocation": null,
+            "@type": null,
+            "@referredType": "individual"
+        }
+    ],
+    "state": "active",
+    "taskFlowRelationship": null,
+    "@baseType": null,
+    "@schemaLocation": null,
+    "@type": "TaskFlow",
+    "_links": {
+        "self": {
+            "href": "https://om-order-capture-staging.apps.fr01.paas.tech.orange/processManagement/v1/processFlow/31353616-bd37-46f3-9035-aac85a90f398/taskFlow/4cd5482f-cc8c-4d70-bfd6-f0423a0b4038"
+        },
+        "taskFlowList": {
+            "href": "https://om-order-capture-staging.apps.fr01.paas.tech.orange/processManagement/v1/processFlow/31353616-bd37-46f3-9035-aac85a90f398/taskFlow"
+        },
+        "nextTaskstoBePerformed": [],
+        "existingTaskEditable": []
+    }
+};
+
 
 // Controller function to handle the POST request for process flow
 const processFlow = (req, res) => {
@@ -622,7 +705,13 @@ const validateOrder = (req, res) => {
     res.status(200).json(mockedValidateResponse);
 };
 
+const payOrder = (req, res) => {
+    res.status(200).json(mockedPaymentResponse);
+};
 
 module.exports = {
-  processFlow,confirmConfiguration,validateOrder,
+    processFlow,
+    confirmConfiguration,
+    validateOrder,
+    payOrder,
 };
