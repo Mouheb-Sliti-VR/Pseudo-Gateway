@@ -619,9 +619,9 @@ const mockedPaymentResponse = {
     "description": null,
     "channel": [
         {
-            "id": "002",
+            "id": "004",
             "href": null,
-            "name": "SHOP",
+            "name": "METAVERSE",
             "@baseType": null,
             "@schemaLocation": null,
             "@type": null,
@@ -664,9 +664,9 @@ const mockedPaymentResponse = {
     "relatedEntity": [],
     "relatedParty": [
         {
-            "id": "226-mf30",
+            "id": "123orange123",
             "href": null,
-            "name": "Lisa",
+            "name": "Mouheb_Sliti",
             "role": "customer",
             "@baseType": null,
             "@schemaLocation": null,
