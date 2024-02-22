@@ -705,9 +705,43 @@ const validateOrder = (req, res) => {
     res.status(200).json(mockedValidateResponse);
 };
 
+// Controller function to handle the POST request for process flow
 const payOrder = (req, res) => {
-    res.status(200).json(mockedPaymentResponse);
+    // Extract necessary data from the request body
+    const { ID_ORANGE, username, paymentRefId } = req.body;
+
+    // Update the mocked payment response with the extracted data
+    const updatedResponse = {
+        ...mockedPaymentResponse,
+        relatedParty: [
+            {
+                id: ID_ORANGE,
+                name: username,
+                role: "customer",
+                "@referredType": "individual"
+            }
+        ],
+        characteristic: [
+            ...mockedPaymentResponse.characteristic,
+            {
+                name: "ProvidePaymentRef",
+                id: paymentRefId,
+                valueType: "Object",
+                value: {
+                    paymentRefId: [
+                        {
+                            id: "paid_100" // You may want to update this value as needed
+                        }
+                    ]
+                },
+                "@type": "ObjectCharacteristic"
+            }
+        ]
+    };
+
+    res.status(200).json(updatedResponse);
 };
+
 
 module.exports = {
     processFlow,
