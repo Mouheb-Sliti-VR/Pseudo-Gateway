@@ -1150,9 +1150,25 @@ const notifyOrder = (req, res) => {
                         name: "Mobile Package 1",
                         "@type": "Contract"
                     },
-                    bundledProductOffering :{
+                    bundledProductOffering :[
+                        {
+                            id :"a2s2qsd4qs4d-d1sq1d1qs5d-zezeae",
+                            name : "Mobile Line"
+                        },
+                        {
+                            id :"a2s2qsd4qs4zzd-d1sq1d1qs5d-zezeae",
+                            name : "Connectivity"
+                        },
+                        {
+                            id :"a2s2qsd4es4d-d1sq1d1qs5d-zezeae",
+                            name : "Time Bundle"
+                        },
+                        {
+                            id :"a2s2qsd4qs4d-d1sq1da1qs5d-zezeae",
+                            name : "Sim Card"
+                        },
 
-                    },
+                    ],
                     productOrderItemRelationship: [
                         {
                             id: "46df67c7-6a0d-450c-a327-4b6563742ce7",
