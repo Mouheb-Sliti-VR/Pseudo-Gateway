@@ -1133,7 +1133,7 @@ const payOrder = (req, res) => {
 
 const notifyOrder = (req, res) => {
     try {
-        const { ID_ORANGE, username, orderId, productId } = req.body;
+        const { ID_ORANGE, username } = req.body;
 
         // Construct the response object with dynamic data
         const mockedNotifResponse = {
