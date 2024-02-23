@@ -9,6 +9,8 @@ router.post('/mock/confirmConf', processFlowController.confirmConfiguration);
 router.post('/mock/validateOrder', processFlowController.validateOrder);
 router.post('/mock/payOrder', processFlowController.payOrder);
 router.post('/mock/NotifyOrder',processFlowController.notifyOrder);
+router.post('/mock/IncompleteNotif',processFlowController.incompleteNotif);
+
 
 
 module.exports = router;

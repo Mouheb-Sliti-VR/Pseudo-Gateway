@@ -811,6 +811,78 @@ const notifyOrder = (req, res) => {
     }
 };
 
+const incompleteNotif = (req, res) => {
+    try {
+        const { ID_ORANGE, username } = req.body;
+
+        // Construct the response object with dynamic data
+        const mockedNotifResponse = {
+            id: "5c1b0a6c-5ae4-4c1b-ac40-a3209aa63eee",
+            href: `https://poi-integration.apps.fr01.paas.tech.orange/5c1b0a6c-5ae4-4c1b-ac40-a3209aa63eee}`,
+            orderDate: new Date().toISOString(),
+            productOrderItem: [
+                {
+                    id: "dc105e36-e288-47f5-894d-0b422f85e54f",
+                    quantity: 1,
+                    action: "add",
+                    productOffering: {
+                        id: "5c1b0a6c-5ae4-4c1b-ac40-a3209aa63eee",
+                        name: "Mobile Package 1",
+                        "@type": "Contract"
+                    },
+                    bundledProductOffering :[
+                        {
+                            id :"a2s2qsd4qs4d-d1sq1d1qs5d-zezeae",
+                            name : "Mobile Line"
+                        },
+                        {
+                            id :"a2s2qsd4qs4zzd-d1sq1d1qs5d-zezeae",
+                            name : "Connectivity"
+                        },
+                        {
+                            id :"a2s2qsd4es4d-d1sq1d1qs5d-zezeae",
+                            name : "Time Bundle"
+                        },
+                        {
+                            id :"a2s2qsd4qs4d-d1sq1da1qs5d-zezeae",
+                            name : "Sim Card"
+                        },
+
+                    ],
+                    productOrderItemRelationship: [
+                        {
+                            id: "46df67c7-6a0d-450c-a327-4b6563742ce7",
+                            relationshipType: "bundles"
+                        }
+                    ],
+                    state: "Incompleted",
+                    "@type": "ProductOrderItem",
+                    isInstallable: true
+                },
+                // Add other productOrderItems as needed
+            ],
+            relatedParty: [
+                {
+                    id: ID_ORANGE,
+                    name: username,
+                    role: "customer",
+                    "@referredType": "individual"
+                }
+            ],
+            state: "Incompleted",
+            "@type": "ProductOrder"
+        };
+        
+
+        // Send the constructed response back
+        res.status(200).json(mockedNotifResponse);
+    } catch (error) {
+        console.error('Error processing the notification request:', error);
+        res.status(500).json({ error: 'Server Error' });
+    }
+};
+
+
 
 module.exports = {
     processFlow,
@@ -818,4 +890,5 @@ module.exports = {
     validateOrder,
     payOrder,
     notifyOrder,
+    incompleteNotif
 };
