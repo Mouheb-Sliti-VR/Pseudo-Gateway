@@ -1133,7 +1133,7 @@ const payOrder = (req, res) => {
 
 const notifyOrder = (req, res) => {
     try {
-        const { orderId } = req.body; // Extract orderId from the request body
+        const { ID_ORANGE,username,orderId } = req.body; // Extract orderId from the request body
 
         // Construct the id and href based on the orderId
         const href = `https://om-order-capture-staging.apps.fr01.paas.tech.orange/processManagement/v1/processFlow/31353616-bd37-46f3-9035-aac85a90f398/taskFlow/${orderId}`;
