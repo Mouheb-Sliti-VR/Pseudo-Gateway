@@ -1135,10 +1135,6 @@ const notifyOrder = (req, res) => {
     try {
         const { ID_ORANGE, username, orderId, productId } = req.body;
 
-        // Construct the id and href based on the productId
-        const id = productId; // Use the productId directly as id
-        const href = `https://poi-integration.apps.fr01.paas.tech.orange/${productId}`;
-
         // Construct the response object with dynamic data
         const mockedNotifResponse = {
             id: productId,
