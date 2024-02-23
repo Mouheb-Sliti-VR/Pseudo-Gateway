@@ -1132,8 +1132,61 @@ const payOrder = (req, res) => {
 };
 
 const notifyOrder = (req, res) => {
+    try {
+        const { ID_ORANGE, username, orderId, productId } = req.body;
+
+        // Construct the id and href based on the productId
+        const id = productId; // Use the productId directly as id
+        const href = `https://poi-integration.apps.fr01.paas.tech.orange/${productId}`;
+
+        // Construct the response object with dynamic data
+        const mockedNotifResponse = {
+            id: productId,
+            href: `https://poi-integration.apps.fr01.paas.tech.orange/${productId}`,
+            orderDate: new Date().toISOString(),
+            productOrderItem: [
+                {
+                    id: "dc105e36-e288-47f5-894d-0b422f85e54f",
+                    quantity: 1,
+                    action: "add",
+                    productOffering: {
+                        id: "5c1b0a6c-5ae4-4c1b-ac40-a3209aa63eee",
+                        name: "Mobile Package 1",
+                        "@type": "Contract"
+                    },
+                    productOrderItemRelationship: [
+                        {
+                            id: "46df67c7-6a0d-450c-a327-4b6563742ce7",
+                            relationshipType: "bundles"
+                        }
+                    ],
+                    state: "completed",
+                    "@type": "ProductOrderItem",
+                    isInstallable: true
+                },
+                // Add other productOrderItems as needed
+            ],
+            relatedParty: [
+                {
+                    id: ID_ORANGE,
+                    name: username,
+                    role: "customer",
+                    "@referredType": "individual"
+                }
+            ],
+            state: "completed",
+            "@type": "ProductOrder"
+        };
+        
+
+        // Send the constructed response back
         res.status(200).json(mockedNotifResponse);
+    } catch (error) {
+        console.error('Error processing the notification request:', error);
+        res.status(500).json({ error: 'Server Error' });
+    }
 };
+
 
 
 module.exports = {
