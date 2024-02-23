@@ -1134,14 +1134,8 @@ const payOrder = (req, res) => {
 const notifyOrder = (req, res) => {
     try {
         const {orderId } = req.body; // Extract orderId from the request body
-
-        // Update the mocked response with the dynamic id and href
-        const mockedResponse = {
-            ...mockedNotifResponse,
-            id: orderId
-        };
         // Send the modified mocked response back
-        res.status(200).json(mockedResponse);
+        res.status(200).json(mockedNotifResponse);
     } catch (error) {
         console.error('Error processing the notification request:', error);
         res.status(500).json({ error: 'Server Error' });
