@@ -32,9 +32,9 @@ const mockProcessFlowResponse = {
     ],
     "relatedParty": [
         {
-            "id": "227-mf30",
+            "id": "123orange123",
             "href": null,
-            "name": "Lisa",
+            "name": "Mouheb_Sliti",
             "role": "customer",
             "@baseType": null,
             "@schemaLocation": null,
@@ -1132,14 +1132,7 @@ const payOrder = (req, res) => {
 };
 
 const notifyOrder = (req, res) => {
-    try {
-        const {orderId } = req.body; // Extract orderId from the request body
-        // Send the modified mocked response back
         res.status(200).json(mockedNotifResponse);
-    } catch (error) {
-        console.error('Error processing the notification request:', error);
-        res.status(500).json({ error: 'Server Error' });
-    }
 };
 
 
