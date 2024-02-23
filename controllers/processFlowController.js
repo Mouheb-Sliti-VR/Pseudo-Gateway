@@ -1138,7 +1138,7 @@ const notifyOrder = (req, res) => {
         // Construct the response object with dynamic data
         const mockedNotifResponse = {
             id: productId,
-            href: `https://poi-integration.apps.fr01.paas.tech.orange/${productId}`,
+            href: `https://poi-integration.apps.fr01.paas.tech.orange/5c1b0a6c-5ae4-4c1b-ac40-a3209aa63eee}`,
             orderDate: new Date().toISOString(),
             productOrderItem: [
                 {
@@ -1182,7 +1182,6 @@ const notifyOrder = (req, res) => {
         res.status(500).json({ error: 'Server Error' });
     }
 };
-
 
 
 module.exports = {
