@@ -1135,16 +1135,11 @@ const notifyOrder = (req, res) => {
     try {
         const {orderId } = req.body; // Extract orderId from the request body
 
-        // Construct the id and href based on the orderId
-        const href = `https://om-order-capture-staging.apps.fr01.paas.tech.orange/processManagement/v1/processFlow/31353616-bd37-46f3-9035-aac85a90f398/taskFlow/${orderId}`;
-
         // Update the mocked response with the dynamic id and href
         const mockedResponse = {
             ...mockedNotifResponse,
-            id: orderId,
-            href: href
+            id: orderId
         };
-
         // Send the modified mocked response back
         res.status(200).json(mockedResponse);
     } catch (error) {
