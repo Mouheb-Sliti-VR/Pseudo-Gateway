@@ -11,6 +11,10 @@ app.use(bodyParser.json());
 // Routes
 app.use(processFlowRoute);
 
+app.get("/health-check", (req, res) => {
+  res.status(200).send("up");
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Disco server running at http://localhost:${port}`);
