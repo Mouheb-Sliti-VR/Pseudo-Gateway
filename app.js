@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const processFlowRoute = require('./routes/processFlowRoute');
+const cors = require('cors');
 
+const processFlowRoute = require('./routes/processFlowRoute');
 const app = express();
 const port = process.env.PORT || 4000;
+app.use(cors());
 
 // Middleware
 app.use(bodyParser.json());
@@ -12,7 +14,7 @@ app.use(bodyParser.json());
 app.use(processFlowRoute);
 
 app.get("/health-check", (req, res) => {
-  res.status(200).send("up");
+  res.status(200).send("Server is awake");
 });
 
 // Start the server
